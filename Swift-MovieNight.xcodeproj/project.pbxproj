@@ -12,16 +12,18 @@
 		7D59879D1BE6DBB7008F6F79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D59879B1BE6DBB7008F6F79 /* Main.storyboard */; };
 		7D59879F1BE6DBB7008F6F79 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D59879E1BE6DBB7008F6F79 /* Assets.xcassets */; };
 		7D5987A21BE6DBB7008F6F79 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D5987A01BE6DBB7008F6F79 /* LaunchScreen.storyboard */; };
+		7D5987AA1BE6DEAF008F6F79 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5987A91BE6DEAF008F6F79 /* MovieDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7D5987941BE6DBB7008F6F79 /* Swift-MovieNight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-MovieNight.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D5987971BE6DBB7008F6F79 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7D5987991BE6DBB7008F6F79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7D5987991BE6DBB7008F6F79 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "Swift-MovieNight/ViewController.swift"; sourceTree = "<group>"; };
 		7D59879C1BE6DBB7008F6F79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D59879E1BE6DBB7008F6F79 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D5987A11BE6DBB7008F6F79 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D5987A31BE6DBB7008F6F79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D5987A91BE6DEAF008F6F79 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieDetailViewController.swift; path = "Swift-MovieNight/MovieDetailViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +57,31 @@
 			isa = PBXGroup;
 			children = (
 				7D5987971BE6DBB7008F6F79 /* AppDelegate.swift */,
-				7D5987991BE6DBB7008F6F79 /* ViewController.swift */,
 				7D59879B1BE6DBB7008F6F79 /* Main.storyboard */,
+				7D5987AB1BE6DEC4008F6F79 /* ViewControllers */,
+				7D5987AC1BE6DEEA008F6F79 /* Resources */,
+			);
+			path = "Swift-MovieNight";
+			sourceTree = "<group>";
+		};
+		7D5987AB1BE6DEC4008F6F79 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7D5987991BE6DBB7008F6F79 /* ViewController.swift */,
+				7D5987A91BE6DEAF008F6F79 /* MovieDetailViewController.swift */,
+			);
+			name = ViewControllers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		7D5987AC1BE6DEEA008F6F79 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				7D59879E1BE6DBB7008F6F79 /* Assets.xcassets */,
 				7D5987A01BE6DBB7008F6F79 /* LaunchScreen.storyboard */,
 				7D5987A31BE6DBB7008F6F79 /* Info.plist */,
 			);
-			path = "Swift-MovieNight";
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D59879A1BE6DBB7008F6F79 /* ViewController.swift in Sources */,
+				7D5987AA1BE6DEAF008F6F79 /* MovieDetailViewController.swift in Sources */,
 				7D5987981BE6DBB7008F6F79 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +305,7 @@
 				7D5987A81BE6DBB7008F6F79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
