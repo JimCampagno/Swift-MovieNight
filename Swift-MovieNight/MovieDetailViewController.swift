@@ -16,13 +16,7 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.setupTheInitialView()
-        self.getRequestForMovie("Jimbo")
-        
-        //        http://www.omdbapi.com/?t=Jurassic+Park&y=&plot=short&r=json
-        
-        
-        
-        
+        self.getRequestForMovie("Jurassic Park")
     }
     
     func setupTheInitialView() {
@@ -31,112 +25,37 @@ class MovieDetailViewController: UIViewController {
     
     
     func getRequestForMovie(movie: String) {
+        let movieStringForURL = movie.stringByReplacingOccurrencesOfString(" ", withString: "+")
         
+        let urlString = "http://www.omdbapi.com/?t=\(movieStringForURL)&plot=short&r=json"
+        
+        let url = NSURL(string: urlString)
         
         let mySession = NSURLSession.sharedSession()
-        let url = NSURL(string: "http://www.omdbapi.com/?t=Jurassic+Park&y=&plot=short&r=json")
-        let networkTask = mySession.dataTaskWithURL(url!, completionHandler : {data, response, error -> Void in
-            
-            
-            do {
-                let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions.MutableContainers ) as! NSDictionary
+        
+        if let url = url {
+            let networkTask = mySession.dataTaskWithURL(url, completionHandler : {data, response, error -> Void in
                 
-                print("Did this work?: \(jsonData)")
+                if (error != nil) {
+                    print("error: \(error?.localizedDescription)")
+                    return
+                }
                 
-                
-                // use jsonData
-            } catch {
-                // report error
-            }
+                if let data = data {
+                    do {
+                        let jsonData = try NSJSONSerialization.JSONObjectWithData(data, options:NSJSONReadingOptions.MutableContainers ) as! NSDictionary
+                        
+                        print("Testing \(jsonData)")
+                        
+                    } catch {
+                        
+                        
+                    }
+                }
+            })
             
-            
-            
-        })
-        networkTask.resume()
-        
-        
-        //        networkTask.resume()
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+            networkTask.resume()
+        }
     }
     
-    //        let url = NSURL(string: "http://www.omdbapi.com/?t=Jurassic+Park&y=&plot=short&r=json")
-    //        let session = NSURLSession.sharedSession()
-    //
-    //        let task = session.dataTaskWithURL(url!, completionHandler:
-    //            {(data, reponse, error) in
-    //                print("Task completed")
-    //                // rest of the function...
-    //        })
-    //
-    //        task.resume()
-    
-    
-    
-    
-    //        let task = session.dataTaskWithURL(url!, completionHandler: { (data, response, error) -> Void in
-    //
-    //            print("\(task)")
-    //
-    //
-    //        }
-    //
-    //    }
-    
-    //        if let movie = movie {
-    //
-    //            print("Movie is not being used \(movie)")
-    //
-    //            if let url = NSURL(string: "http://www.omdbapi.com/?t=Jurassic+Park&y=&plot=short&r=json") {
-    //
-    //                let session = NSURLSession.sharedSession()
-    //
-    //                let task = session.dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
-    //
-    //                    if let error = error {
-    //                        print("error: \(error.localizedDescription): \(error.userInfo)")
-    //                    }
-    //                }
-    //
-    //
-    //                //                    let jsonData = try NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions.MutableContainers ) as! NSDictionary
-    //                //
-    //                //                        let movieResponse = NSMutableDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers) as! NSMutableDictionary
-    //                //
-    //                //
-    //                //
-    //                //
-    //                //
-    //                //
-    //                //
-    //                //
-    //                //
-    //                //
-    //                //
-    //                //
-    //                //
-    //                //
-    //                //
-    //                //
-    //                //
-    //
-    //
-    //
-    //
-    //                //                    task.resume()
-    //
-    //
-    //
-    //
 }
