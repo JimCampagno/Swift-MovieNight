@@ -17,12 +17,12 @@ class MovieDetailViewController: UIViewController {
         
         self.setupTheInitialView()
         
-        
+//        http://www.omdbapi.com/?t=Jurassic+Park&y=&plot=short&r=json
         
         
     }
     
     func setupTheInitialView() {
-        movieBanner.backgroundColor = UIColor(patternImage: UIImage(imageLiteral: "Movie"))
+        movieBanner.backgroundColor = UIColor(patternImage: UIImage(named: "Movie")!)
     }
 }
