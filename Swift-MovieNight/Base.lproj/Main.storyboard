@@ -218,19 +218,82 @@
                                     <constraint firstItem="ExU-Fr-163" firstAttribute="centerY" secondItem="m2f-ty-Xrb" secondAttribute="centerY" id="zMS-NM-hRD"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Lr-eu-gLN" userLabel="ActorsLabel">
+                                <rect key="frame" x="0.0" y="238" width="414" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvz-9x-Wrs">
+                                        <rect key="frame" x="172" y="8" width="71" height="33"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="pvz-9x-Wrs" firstAttribute="centerY" secondItem="8Lr-eu-gLN" secondAttribute="centerY" id="3g1-Dk-3Wr"/>
+                                    <constraint firstItem="pvz-9x-Wrs" firstAttribute="centerX" secondItem="8Lr-eu-gLN" secondAttribute="centerX" id="c70-ZA-xCs"/>
+                                    <constraint firstAttribute="height" constant="49" id="r7L-VC-NXJ"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gle-4N-udh">
+                                <rect key="frame" x="0.0" y="287" width="414" height="449"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="actorCell" textLabel="wUT-Xo-PUi" style="IBUITableViewCellStyleDefault" id="lP7-3t-mSw">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lP7-3t-mSw" id="KCY-UP-5Oq">
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wUT-Xo-PUi">
+                                                    <rect key="frame" x="15" y="0.0" width="364" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gle-4N-udh" firstAttribute="bottom" secondItem="fHf-GI-oub" secondAttribute="top" id="1CG-cp-82D"/>
+                            <constraint firstItem="gle-4N-udh" firstAttribute="leading" secondItem="qXU-FI-Br9" secondAttribute="leading" id="2R3-R1-usZ"/>
+                            <constraint firstItem="8Lr-eu-gLN" firstAttribute="top" secondItem="5uo-gb-9Zk" secondAttribute="bottom" id="BOp-ho-9Cj"/>
                             <constraint firstItem="5uo-gb-9Zk" firstAttribute="leading" secondItem="qXU-FI-Br9" secondAttribute="leading" id="Bmx-LQ-VIR"/>
+                            <constraint firstItem="gle-4N-udh" firstAttribute="top" secondItem="8Lr-eu-gLN" secondAttribute="bottom" id="NoW-OT-nhr"/>
+                            <constraint firstItem="8Lr-eu-gLN" firstAttribute="trailing" secondItem="qXU-FI-Br9" secondAttribute="trailing" id="bRr-g9-KK3"/>
+                            <constraint firstItem="gle-4N-udh" firstAttribute="trailing" secondItem="qXU-FI-Br9" secondAttribute="trailing" id="c8L-fQ-wRu"/>
                             <constraint firstItem="5uo-gb-9Zk" firstAttribute="top" secondItem="kQC-6P-liO" secondAttribute="bottom" id="hst-GK-290"/>
+                            <constraint firstItem="8Lr-eu-gLN" firstAttribute="leading" secondItem="qXU-FI-Br9" secondAttribute="leading" id="iBZ-Sf-ETw"/>
                             <constraint firstItem="5uo-gb-9Zk" firstAttribute="trailing" secondItem="qXU-FI-Br9" secondAttribute="trailing" id="jwc-8j-Wb5"/>
                             <constraint firstItem="CAr-fx-7tg" firstAttribute="trailing" secondItem="qXU-FI-Br9" secondAttribute="trailing" constant="-8" id="q1I-LM-agb"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="actorTableView" destination="gle-4N-udh" id="rc2-VU-THa"/>
+                        <outlet property="actorsView" destination="8Lr-eu-gLN" id="Kk8-Cc-AKw"/>
+                        <outlet property="directorLabel" destination="oZk-JE-s5j" id="BV4-Dc-hzf"/>
+                        <outlet property="durationOfFilmLabel" destination="frI-AZ-17w" id="nHL-1f-A5W"/>
+                        <outlet property="imdbRatingLabel" destination="SCw-Bn-6tf" id="3CV-cB-qFB"/>
                         <outlet property="movieBanner" destination="5uo-gb-9Zk" id="OuN-iR-ldS"/>
+                        <outlet property="movieImage" destination="7kD-mZ-KhJ" id="zFU-1I-1fH"/>
+                        <outlet property="releaseDateLabel" destination="DIm-Mg-Vkc" id="iY1-Al-A8v"/>
+                        <outlet property="titleOfMovieLabel" destination="SN5-On-IaT" id="70x-Fn-ML1"/>
+                        <outlet property="writerLabel" destination="48F-wb-Vkf" id="mvW-G7-hAw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ih9-SH-SRk" userLabel="First Responder" sceneMemberID="firstResponder"/>

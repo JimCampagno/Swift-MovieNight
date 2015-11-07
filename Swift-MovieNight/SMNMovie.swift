@@ -43,39 +43,58 @@ class Movie {
         }
     }
     
-    
-    
     convenience init(movieDictionary: NSDictionary) {
+        var arrayOfActors = [String]()
+        var finalListOfActors = [String]()
+        let nameOfActors = movieDictionary["Actors"] as? String
+        
+        if let nameOfActors = nameOfActors {
+            arrayOfActors = nameOfActors.componentsSeparatedByString(",")
+        }
+        
+        for var actor in arrayOfActors {
+            let firstActorInArray = arrayOfActors[0]
+            
+            if actor == firstActorInArray {
+                actor.removeAtIndex(actor.endIndex.predecessor())
+                finalListOfActors.append(actor)
+                continue
+            }
+        
+            actor.removeAtIndex(actor.startIndex)
+            finalListOfActors.append(actor)
+        }
+        
+//        {"Title":"Jurassic Park","Year":"1993","Rated":"PG-13","Released":"11 Jun 1993","Runtime":"127 min","Genre":"Adventure, Sci-Fi, Thriller","Director":"Steven Spielberg","Writer":"Michael Crichton (novel), Michael Crichton (screenplay), David Koepp (screenplay)","Actors":"Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough","Plot":"During a preview tour, a theme park suffers a major power breakdown that allows its cloned dinosaur exhibits to run amok.","Language":"English, Spanish","Country":"USA","Awards":"Won 3 Oscars. Another 25 wins & 16 nominations.","Poster":"http://ia.media-imdb.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX300.jpg","Metascore":"68","imdbRating":"8.1","imdbVotes":"544,507","imdbID":"tt0107290","Type":"movie","Response":"True"}
         
         
-        
-        self.init(actors: [], country: <#T##String#>, director: <#T##String#>, plot: <#T##String#>, posterString: <#T##String#>, poster: <#T##UIImage?#>, released: <#T##String#>, runtime: <#T##String#>, title: <#T##String#>, writer: <#T##String#>, year: <#T##String#>, imdbRating: <#T##String#>, imdbVotes: <#T##String#>)
-        
-//        Testing {
-//            Actors = "Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough";
-//            Awards = "Won 3 Oscars. Another 25 wins & 16 nominations.";
-//            Country = USA;
-//            Director = "Steven Spielberg";
-//            Genre = "Adventure, Sci-Fi, Thriller";
-//            Language = "English, Spanish";
-//            Metascore = 68;
-//            Plot = "During a preview tour, a theme park suffers a major power breakdown that allows its cloned dinosaur exhibits to run amok.";
-//            Poster = "http://ia.media-imdb.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX300.jpg";
-//            Rated = "PG-13";
-//            Released = "11 Jun 1993";
-//            Response = True;
-//            Runtime = "127 min";
-//            Title = "Jurassic Park";
-//            Type = movie;
-//            Writer = "Michael Crichton (novel), Michael Crichton (screenplay), David Koepp (screenplay)";
-//            Year = 1993;
-//            imdbID = tt0107290;
-//            imdbRating = "8.1";
-//            imdbVotes = "544,507";
-//        }
-
-        
+        self.init(actors: finalListOfActors,
+            country: movieDictionary["Country"] as! String,
+            director: movieDictionary["Director"] as! String,
+            plot: movieDictionary["Plot"] as! String,
+            posterString: movieDictionary["Poster"] as! String,
+            poster: nil,
+            released: movieDictionary["Released"] as! String,
+            runtime: movieDictionary["Runtime"] as! String,
+            title: movieDictionary["Title"] as! String,
+            writer: "Jim",
+            year: movieDictionary["Year"] as! String,
+            imdbRating: movieDictionary["imdbRating"] as! String,
+            imdbVotes: movieDictionary["imdbVotes"] as! String)
         
         
     }
 }
+
+extension Movie: CustomStringConvertible {
+    var description: String {
+        
+        let responseDictionary = ["title": title, "actors": actors]
+        
+        //return "MyClass \(string)"
+        return "\(self.dynamicType) : \(responseDictionary)"
+    }
+}
+
+
+

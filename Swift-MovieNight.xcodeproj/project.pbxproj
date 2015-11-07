@@ -15,6 +15,7 @@
 		7D5987AA1BE6DEAF008F6F79 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5987A91BE6DEAF008F6F79 /* MovieDetailViewController.swift */; };
 		7D5987AF1BED465C008F6F79 /* imdbAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5987AE1BED465C008F6F79 /* imdbAPIClient.swift */; };
 		7D5987B11BED550F008F6F79 /* SMNMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5987B01BED550F008F6F79 /* SMNMovie.swift */; };
+		7D5987B41BEE6EA0008F6F79 /* TESTTESTTEST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5987B31BEE6EA0008F6F79 /* TESTTESTTEST.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		7D5987A91BE6DEAF008F6F79 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieDetailViewController.swift; path = "Swift-MovieNight/MovieDetailViewController.swift"; sourceTree = "<group>"; };
 		7D5987AE1BED465C008F6F79 /* imdbAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = imdbAPIClient.swift; sourceTree = "<group>"; };
 		7D5987B01BED550F008F6F79 /* SMNMovie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SMNMovie.swift; sourceTree = "<group>"; };
+		7D5987B31BEE6EA0008F6F79 /* TESTTESTTEST.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TESTTESTTEST.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +64,11 @@
 			children = (
 				7D5987971BE6DBB7008F6F79 /* AppDelegate.swift */,
 				7D59879B1BE6DBB7008F6F79 /* Main.storyboard */,
-				7D5987B01BED550F008F6F79 /* SMNMovie.swift */,
-				7D5987AD1BED4548008F6F79 /* API Client */,
+				7D5987B21BEE5B7E008F6F79 /* Models */,
 				7D5987AB1BE6DEC4008F6F79 /* ViewControllers */,
+				7D5987AD1BED4548008F6F79 /* API Client */,
 				7D5987AC1BE6DEEA008F6F79 /* Resources */,
+				7D5987B31BEE6EA0008F6F79 /* TESTTESTTEST.swift */,
 			);
 			path = "Swift-MovieNight";
 			sourceTree = "<group>";
@@ -96,6 +99,14 @@
 				7D5987AE1BED465C008F6F79 /* imdbAPIClient.swift */,
 			);
 			name = "API Client";
+			sourceTree = "<group>";
+		};
+		7D5987B21BEE5B7E008F6F79 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7D5987B01BED550F008F6F79 /* SMNMovie.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +185,7 @@
 				7D5987AA1BE6DEAF008F6F79 /* MovieDetailViewController.swift in Sources */,
 				7D5987981BE6DBB7008F6F79 /* AppDelegate.swift in Sources */,
 				7D5987AF1BED465C008F6F79 /* imdbAPIClient.swift in Sources */,
+				7D5987B41BEE6EA0008F6F79 /* TESTTESTTEST.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
