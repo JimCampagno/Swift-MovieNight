@@ -56,7 +56,6 @@ class Movie {
             let firstActorInArray = arrayOfActors[0]
             
             if actor == firstActorInArray {
-                actor.removeAtIndex(actor.endIndex.predecessor())
                 finalListOfActors.append(actor)
                 continue
             }

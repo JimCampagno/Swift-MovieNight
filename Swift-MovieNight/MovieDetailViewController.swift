@@ -32,7 +32,9 @@ class MovieDetailViewController: UIViewController, UITableViewDelegate, UITableV
         actorTableView.delegate = self
         actorTableView.dataSource = self
         
-        imdbAPIClient.movieInfoWithTitle("Jurassic Park") { (newMovie) -> Void in
+        imdbAPIClient.movieInfoWithTitle("The Matrix") { (newMovie) -> Void in
+            
+            
             self.currentMovie = newMovie
             self.durationOfFilmLabel.text = newMovie.runtime
             self.imdbRatingLabel.text = newMovie.imdbRating
