@@ -32,7 +32,9 @@ class MovieDetailViewController: UIViewController, UITableViewDelegate, UITableV
         actorTableView.delegate = self
         actorTableView.dataSource = self
         
-        imdbAPIClient.movieInfoWithTitle("The Matrix") { newMovie in
+        imdbAPIClient.movieInfoWithTitle("Green Mile") { newMovie in
+            
+            guard let newMovie = newMovie else { return }
             
             dispatch_async(dispatch_get_main_queue()) { [unowned self] _ in
                 

@@ -18,24 +18,31 @@ class imdbAPIClient {
         
         guard let url = NSURL(string: urlString) else { completion(result: nil); return }
         
+        let defaultSession = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        var dataTask: NSURLSessionDataTask?
+        
+        
+
+        
+        
         let mySession = NSURLSession.sharedSession()
         
-        let networkTask = mySession.dataTaskWithURL(url) { data, response, error in
-            
-            if error != nil {
-                print("ERROR: \(error!.localizedDescription)")
-            }
-            
-            if let data = data {
-                
-                do {
-                    le
-                }
-                
-            }
-            
-            
-        }
+//        let networkTask = mySession.dataTaskWithURL(url) { data, response, error in
+//            
+//            if error != nil {
+//                print("ERROR: \(error!.localizedDescription)")
+//            }
+//            
+//            if let data = data {
+//                
+//                do {
+//                    le
+//                }
+//                
+//            }
+//            
+//            
+//        }
         
         let networkTask = mySession.dataTaskWithURL(url, completionHandler : {data, response, error -> Void in
             
