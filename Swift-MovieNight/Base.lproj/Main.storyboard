@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hpq-aF-WTL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A56-2f-kDS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -7,7 +7,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--L E O-->
         <scene sceneID="Ffk-OT-YIQ">
             <objects>
                 <viewController id="Hpq-aF-WTL" customClass="ViewController" customModule="Swift_MovieNight" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,32 +19,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F2g-QU-5XF" userLabel="Leo">
-                                <rect key="frame" x="41" y="335" width="331" height="351"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F2g-QU-5XF" userLabel="Leo">
+                                <rect key="frame" x="41" y="336.5" width="331" height="349.5"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GTk-LB-z9E">
-                                <rect key="frame" x="20" y="157" width="374" height="132"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GTk-LB-z9E">
+                                <rect key="frame" x="20" y="155" width="374" height="131.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="ltw-eH-nob">
-                                        <rect key="frame" x="2" y="0.0" width="371" height="90"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="89.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type in the title of a movie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0KZ-wb-zp5">
-                                                <rect key="frame" x="0.0" y="0.0" width="371" height="43"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search for a movie which contains Leo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0KZ-wb-zp5">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="42.5"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="31"/>
                                                 <color key="textColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titanic" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQ9-KK-yv5">
-                                                <rect key="frame" x="0.0" y="60" width="371" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="movie" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vQ9-KK-yv5">
+                                                <rect key="frame" x="0.0" y="59.5" width="374" height="30"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idz-kN-nNr">
-                                        <rect key="frame" x="172" y="90" width="30" height="42"/>
+                                        <rect key="frame" x="172" y="89.5" width="30" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="🔍"/>
+                                        <connections>
+                                            <action selector="searchForMovie:" destination="Hpq-aF-WTL" eventType="touchUpInside" id="hxk-83-CaM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -61,14 +64,17 @@
                             <constraint firstItem="GTk-LB-z9E" firstAttribute="centerY" secondItem="fky-gj-x1f" secondAttribute="centerY" multiplier="0.6" id="v4p-XP-lh5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="L E O" id="J1K-Zo-MJr"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="imageView" destination="F2g-QU-5XF" id="YaC-Ck-cx5"/>
+                        <outlet property="movieSearchTextField" destination="vQ9-KK-yv5" id="O7P-1k-SWa"/>
+                        <segue destination="Dtq-8Q-DYd" kind="show" identifier="movieSearch" id="iZG-qZ-z3S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XU6-m8-93H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1272" y="252"/>
+            <point key="canvasLocation" x="2084" y="252"/>
         </scene>
         <!--Movie Detail View Controller-->
         <scene sceneID="vTX-0G-K6n">
@@ -306,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ih9-SH-SRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1807" y="252"/>
+            <point key="canvasLocation" x="2619" y="252"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3ps-uP-wyH">
@@ -322,6 +328,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K5J-bi-1mm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="475" y="283"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lr5-oY-YQo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A56-2f-kDS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7xZ-au-7wj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Hpq-aF-WTL" kind="relationship" relationship="rootViewController" id="wPG-Pm-FeZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="69j-uP-und" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1272" y="252"/>
         </scene>
     </scenes>
     <resources>

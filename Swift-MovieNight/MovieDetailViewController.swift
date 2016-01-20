@@ -24,6 +24,7 @@ class MovieDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     let kHeightForRows: CGFloat = 72
     var currentMovie: Movie?
+    var movieToSearchFor: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,7 @@ class MovieDetailViewController: UIViewController, UITableViewDelegate, UITableV
         actorTableView.delegate = self
         actorTableView.dataSource = self
         
-        imdbAPIClient.movieInfoWithTitle("Green Mile") { newMovie in
+        imdbAPIClient.movieInfoWithTitle(movieToSearchFor) { newMovie in
             
             guard let newMovie = newMovie else { return }
             
