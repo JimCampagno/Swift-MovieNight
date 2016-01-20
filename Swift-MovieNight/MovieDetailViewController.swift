@@ -32,24 +32,28 @@ class MovieDetailViewController: UIViewController, UITableViewDelegate, UITableV
         actorTableView.delegate = self
         actorTableView.dataSource = self
         
-        imdbAPIClient.movieInfoWithTitle("The Matrix") { (newMovie) -> Void in
+        imdbAPIClient.movieInfoWithTitle("The Matrix") { newMovie in
             
+            dispatch_async(dispatch_get_main_queue()) { [unowned self] _ in
+                
+                self.currentMovie = newMovie
+                self.durationOfFilmLabel.text = newMovie.runtime
+                self.imdbRatingLabel.text = newMovie.imdbRating
+                self.releaseDateLabel.text = newMovie.released
+                self.directorLabel.text = newMovie.director
+                self.writerLabel.text = newMovie.writer
+                self.titleOfMovieLabel.text = newMovie.title
+                
+                self.actorTableView.reloadData()
+                
+            }
             
-            self.currentMovie = newMovie
-            self.durationOfFilmLabel.text = newMovie.runtime
-            self.imdbRatingLabel.text = newMovie.imdbRating
-            self.releaseDateLabel.text = newMovie.released
-            self.directorLabel.text = newMovie.director
-            self.writerLabel.text = newMovie.writer
-            self.titleOfMovieLabel.text = newMovie.title
-        
-            self.actorTableView.reloadData()
         }
     }
     
     func setupTheInitialView() {
         movieBanner.backgroundColor = UIColor(patternImage: UIImage(named: "Movie")!)
-        actorsView.backgroundColor = UIColor(patternImage: UIImage(named: "Actor Display Label")!)
+        //        actorsView.backgroundColor = UIColor(patternImage: UIImage(named: "Actor Display Label")!)
     }
     
     // MARK: - Table view data source
@@ -68,7 +72,10 @@ class MovieDetailViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("actorCell", forIndexPath: indexPath)
         
-        cell.backgroundColor = UIColor(patternImage: UIImage(named: "TableViewCellBackground")!)
+        //        cell.backgroundColor = UIColor(patternImage: UIImage(named: "TableViewCellBackground")!)
+        cell.imageView!.image = nil
+        
+        cell.backgroundColor = UIColor.redColor()
         
         let nameOfActor = currentMovie?.actors[indexPath.row]
         if let nameOfActor = nameOfActor {
